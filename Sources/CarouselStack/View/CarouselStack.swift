@@ -191,6 +191,6 @@ extension CarouselStack {
     ) {
         self.data = data
         self.content = content
-        self._index = State(initialValue: data.startIndex)
+        self._index = State(initialValue: initialIndex ?? data.startIndex)
     }
 }
