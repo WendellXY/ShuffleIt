@@ -7,6 +7,7 @@ public struct SizePreferenceKey: PreferenceKey {
     public static let defaultValue: Value = .zero
 
     public static func reduce(value: inout Value, nextValue: () -> Value) {
-        value = CGSize(width: value.width + nextValue().width, height: value.height + nextValue().height)
+        let next = nextValue()
+        value = CGSize(width: value.width + next.width, height: value.height + next.height)
     }
 }
